@@ -9,6 +9,7 @@
 <meta name="theme-color" content="#0B1026">
 <title>Sortes Vergilianae</title>
 <style>
+  /* Layout: centered ritual oracle, single-column focus */
   @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600&display=swap');
 
   :root {
@@ -84,6 +85,7 @@
     align-items: center;
   }
 
+  /* Header */
   .header {
     text-align: center;
     margin-bottom: 48px;
@@ -127,6 +129,7 @@
     margin-top: 12px;
   }
 
+  /* Divider ornament */
   .ornament {
     display: flex;
     align-items: center;
@@ -152,6 +155,7 @@
     flex-shrink: 0;
   }
 
+  /* Draw button */
   .draw-section {
     text-align: center;
     margin: 16px 0 40px;
@@ -204,6 +208,7 @@
     transform: scale(0.97);
   }
 
+  /* Oracle display */
   .oracle {
     width: 100%;
     opacity: 0;
@@ -295,6 +300,7 @@
     text-align: center;
   }
 
+  /* Drawing animation */
   .drawing .oracle-latin,
   .drawing .oracle-en,
   .drawing .oracle-zh {
@@ -310,6 +316,7 @@
   .drawing .oracle-en { animation-delay: 0.15s; }
   .drawing .oracle-zh { animation-delay: 0.3s; }
 
+  /* Number display */
   .oracle-number {
     font-family: var(--font-display);
     font-size: clamp(3rem, 8vw, 4.5rem);
@@ -321,6 +328,7 @@
     line-height: 1;
   }
 
+  /* Footer actions */
   .oracle-actions {
     display: flex;
     justify-content: center;
@@ -350,6 +358,7 @@
     outline-offset: 2px;
   }
 
+  /* Copy toast */
   .toast {
     position: fixed;
     bottom: 32px;
@@ -373,6 +382,7 @@
     transform: translateX(-50%) translateY(0);
   }
 
+  /* Shuffle animation */
   @keyframes shuffleNum {
     0%, 100% { opacity: 0.35; }
     50% { opacity: 0.6; }
@@ -382,6 +392,7 @@
     animation: shuffleNum 0.1s linear infinite;
   }
 
+  /* Footer info */
   .footer {
     margin-top: 56px;
     text-align: center;
@@ -401,6 +412,7 @@
     font-size: 0.8rem;
   }
 
+  /* Count display */
   .count {
     font-family: var(--font-display);
     font-size: 0.65rem;
@@ -482,6 +494,7 @@ const BOOKS = {
 };
 
 const O = [
+  // ——— BOOK I: Storm, Carthage, Juno's Wrath ———
   [1,1,"Arma virumque cano, Troiae qui primus ab oris","Arms, and the man I sing, who first from Troy's shores","我歌唱武器与英雄，他最先从特洛伊的海岸启程"],
   [1,11,"Musa, mihi causas memora, quo numine laeso","Muse, tell me the causes — what wounded divinity","缪斯啊，告诉我缘由——是什么被冒犯的神力"],
   [1,33,"Tantaene animis caelestibus irae?","Can such anger dwell in heavenly minds?","天神的心中，竟也容得下如此深重的怒火？"],
@@ -499,6 +512,8 @@ const O = [
   [1,203,"O passi graviora, dabit deus his quoque finem.","O you who have endured worse things, god will give an end to these as well.","承受过更大苦难的人啊，神也会给这一切一个终结。"],
   [1,387,"Quisquis es, haud, credo, invisus caelestibus auras / vitalis carpis.","Whoever you are, not hated by the gods, I think, you breathe the air of life.","无论你是谁，你既能呼吸生命的空气，我想天神并未厌弃你。"],
   [1,607,"Vos ego nec terris nec fluctibus ullis / egentes laudo.","I praise you who want for nothing on land or sea.","你们在陆地和海洋上都不匮乏——我赞颂你们。"],
+
+  // ——— BOOK II: The Fall of Troy ———
   [2,3,"Infandum, regina, iubes renovare dolorem.","Unspeakable, O queen, is the grief you bid me renew.","女王，你命我重提的是不可言说的悲痛。"],
   [2,6,"Quaeque ipse miserrima vidi, / et quorum pars magna fui.","The most pitiful things I myself saw, and of which I was a great part.","我亲眼目睹了最惨痛的一切，而我自己也是其中重要的一部分。"],
   [2,49,"Timeo Danaos et dona ferentes.","I fear the Greeks, even bearing gifts.","我恐惧希腊人，即便他们带着礼物。"],
@@ -514,6 +529,8 @@ const O = [
   [2,776,"Quid tantum insano iuvat indulgere dolori?","What good does it do to indulge so much in mad grief?","沉溺于疯狂的悲痛之中，又有什么益处？"],
   [2,790,"Res animos incognita turbat.","An unknown thing disturbs the mind.","未知之事扰乱了心神。"],
   [2,792,"Antiquam exquirite matrem.","Seek out your ancient mother.","去寻找你们古老的母亲。"],
+
+  // ——— BOOK III: Wanderings & Prophecy ———
   [3,56,"Quid non mortalia pectora cogis, / auri sacra fames!","To what do you not drive mortal hearts, accursed hunger for gold!","可诅咒的黄金之渴啊，你不驱使人心走向何处！"],
   [3,97,"Dardanidae duri, quae vos a stirpe parentum / prima tulit tellus, eadem vos ubere laeto / accipiet reduces.","Hardy sons of Dardanus, the land that first bore you from your parents' stock shall receive you back.","坚毅的达达尼亚子孙，最初孕育你们祖先血脉的土地，将以丰饶的怀抱重新接纳你们。"],
   [3,182,"Italiam sequimur fugientem.","We pursue Italy as it flees from us.","我们追寻着不断远去的意大利。"],
@@ -524,6 +541,8 @@ const O = [
   [3,462,"Unam exspira, unam te vivere narro.","Breathe out just one — I tell you that one still lives.","只消吐出一口气——我告诉你，那一个仍然活着。"],
   [3,494,"Vivite felices, quibus est fortuna peracta / iam sua.","Live happily, you whose fortune is already fulfilled.","幸福地活着吧，你们的命运已经圆满。"],
   [3,505,"Nulla dies umquam memori vos eximet aevo.","No day shall ever remove you from the memory of time.","没有任何一天能将你们从时间的记忆中抹去。"],
+
+  // ——— BOOK IV: Dido & Aeneas ———
   [4,13,"Agnosco veteris vestigia flammae.","I recognize the traces of an old flame.","我认出了旧日爱情的余烬。"],
   [4,23,"Sed mihi vel tellus optem prius ima dehiscat.","But may the earth gape open beneath me first.","但愿大地先在我脚下裂开。"],
   [4,65,"Infelix Dido, nunc te facta impia tangunt?","Unhappy Dido, do impious deeds now touch you?","不幸的狄多，如今那不虔之事触动了你？"],
@@ -540,6 +559,8 @@ const O = [
   [4,629,"Litora litoribus contraria, fluctibus undas / imprecor, arma armis: pugnent ipsique nepotesque.","Shore against shore, wave against wave, sword against sword I pray: let them fight, they and their children's children.","我诅咒海岸与海岸为敌，波浪与波浪对抗，刀剑与刀剑相向——让他们世世代代征战不休。"],
   [4,653,"Vixi, et quem dederat cursum fortuna peregi.","I have lived, and completed the course that fortune gave me.","我活过了，走完了命运赋予我的路。"],
   [4,660,"Dulces exuviae, dum fata deusque sinebat, / accipite hanc animam.","Sweet relics, while fate and god allowed, receive this soul.","甜蜜的遗物啊，趁命运和神明还允许，接受这灵魂吧。"],
+
+  // ——— BOOK V: Funeral Games in Sicily ———
   [5,231,"Possunt, quia posse videntur.","They can, because they think they can.","他们能做到，因为他们相信自己能做到。"],
   [5,344,"Non iam prima peto; de tribus ultima malo.","I no longer seek first place; last of three I prefer.","我不再争第一；三个之中最末，我甘愿。"],
   [5,710,"Tu ne cede malis, sed contra audentior ito, / quam tua te Fortuna sinet.","Yield not to misfortunes, but go forth more boldly against them than your Fortune allows.","不要向厄运屈服，而要比命运允许的更勇敢地前行。"],
@@ -548,6 +569,8 @@ const O = [
   [5,770,"Nec revocare gradum superasque evadere ad auras / hoc opus, hic labor est.","Not to recall your step and escape to the upper air — this is the task, this the toil.","不是回转脚步、逃向上方的空气——这才是真正的考验。"],
   [5,796,"Unum pro multis dabitur caput.","One life shall be given for many.","一人之命将为众人而献。"],
   [5,849,"Dixit, et in verba iurandum postulat ensem.","He spoke, and demanded a sword on which to swear.","他说完，要求一把剑来立誓。"],
+
+  // ——— BOOK VI: The Underworld ———
   [6,95,"Facilis descensus Averno; / noctes atque dies patet atri ianua Ditis.","Easy is the descent to Avernus; night and day the door of dark Dis stands open.","下冥界的路是容易的；日日夜夜，幽暗冥王的门都敞开着。"],
   [6,128,"Sed revocare gradum superasque evadere ad auras, / hoc opus, hic labor est.","But to retrace your steps and escape to the upper air — this is the task, this the toil.","但要回转脚步、逃回上方的空气——这才是考验，这才是艰辛。"],
   [6,131,"Pauci, quos aequus amavit / Iuppiter, aut ardens evexit ad aethera virtus.","Few, whom just Jupiter loved, or whom blazing virtue lifted to the sky.","只有少数人——被公正的朱庇特所爱，或被炽烈的美德送上苍穹。"],
@@ -571,6 +594,8 @@ const O = [
   [6,869,"Tu Marcellus eris. Manibus date lilia plenis.","You shall be Marcellus. Give lilies with full hands.","你将成为马尔凯卢斯。双手满捧百合花吧。"],
   [6,882,"Ostendent terris hunc tantum fata neque ultra / esse sinent.","The fates will but show him to the world, and not allow him to stay longer.","命运只让他在世间短暂显现，不许他停留更久。"],
   [6,893,"Sunt geminae Somni portae, quarum altera fertur / cornea, qua veris facilis datur exitus umbris.","There are twin gates of Sleep: one is said to be of horn, through which true shades pass easily.","睡眠有两扇门：一扇据说是角质的，真实的幽灵从那里轻易通过。"],
+
+  // ——— BOOK VII: War in Latium ———
   [7,44,"Tu quoque litoribus nostris, Aeneia nutrix, / aeternam moriens famam, Caieta, dedisti.","You too, Caieta, nurse of Aeneas, gave eternal fame to our shores by dying.","你也给了我们海岸永恒的名声，卡耶塔——埃涅阿斯的乳母——以你的死。"],
   [7,96,"Ne pete conubiis natam sociare Latinis; / externi venient generi.","Do not seek to join your daughter in Latin marriage; foreign sons-in-law shall come.","不要将你的女儿许配给拉丁人；外来的女婿将到来。"],
   [7,203,"Sic fata deum rex sortitur volvitque vicissim.","So the king of gods allots and turns the fates in turn.","众神之王就这样分配命运，轮番翻转。"],
@@ -579,6 +604,8 @@ const O = [
   [7,572,"Luctus ubique pavor et plurima mortis imago.","Everywhere grief, everywhere dread, and death in many a form.","到处是悲痛，到处是恐惧，死亡以无数面孔现身。"],
   [7,594,"Quin etiam in silvas, simulato numine Bacchi, / maius adorta nefas maioremque orsa furorem.","She even took to the woods, feigning the power of Bacchus, daring greater sacrilege.","她甚至遁入丛林，假借酒神之力，敢于更大的亵渎。"],
   [7,601,"Nec face tantum / Cisseis praegnans ignis enixa iugalis: / sed non ante datum volvere casus.","This was not less than when the pregnant daughter of Cisseus bore a firebrand — but fate was not yet ready to turn.","这不亚于基修斯的女儿怀着火把生下婚姻之炎——但命运尚未准备好翻转。"],
+
+  // ——— BOOK VIII: Alliance & the Shield ———
   [8,18,"Nec tu Tiberine, tuorum / oblitus recede fluens.","And you, Tiber, do not flow away, forgetting your people.","台伯河啊，不要遗忘你的子民而流走。"],
   [8,112,"Hunc illum poscere fata / et voce vocantem / volantem fama per agros.","This is the one fate demands, whom fame calls through the fields.","这就是命运要求的那个人，名声在田野间呼唤他飞来。"],
   [8,275,"Primus ab aetherio venit Saturnus Olympo.","First from heavenly Olympus came Saturn.","萨图尔努斯最先从天上的奥林匹斯降临。"],
@@ -588,6 +615,8 @@ const O = [
   [8,560,"Stat sua cuique dies, breve et inreparabile tempus / omnibus est vitae.","Each has their appointed day; brief and irreparable is the span of life for all.","每个人都有注定的日子；生命的时光对所有人都是短暂且不可挽回的。"],
   [8,625,"Illic res Italas Romanorumque triumphos / non vatum ignarus venturique inscius aevi / fecerat ignipotens.","There the fire-lord, not ignorant of prophecy nor unknowing of the age to come, had wrought the story of Italy and Rome's triumphs.","在那里，火神——他并非不知预言，也并非不晓未来的时代——铸造了意大利的故事和罗马的凯旋。"],
   [8,731,"Attollens umero famamque et fata nepotum.","Lifting on his shoulder the fame and fate of his descendants.","他肩扛着后代的荣耀与命运。"],
+
+  // ——— BOOK IX: Siege & Sacrifice ———
   [9,184,"Nisus ait: 'Dine hunc ardorem mentibus addunt, / Euryale, an sua cuique deus fit dira cupido?'","Nisus says: 'Do the gods put this fire in our minds, Euryalus, or does each person's fierce desire become their god?'","尼苏斯说：'是众神将这烈焰放入我们心中，欧律阿卢斯，还是每个人炽烈的渴望本身就成了他的神？'"],
   [9,205,"Nulla dies umquam memori vos eximet aevo.","No day shall ever erase you from the memory of time.","没有任何一天能将你们从时间的记忆中抹去。"],
   [9,281,"Fortunati ambo! Si quid mea carmina possunt, / nulla dies umquam memori vos eximet aevo.","Fortunate pair! If my songs have any power, no day shall ever erase you from the memory of time.","幸运的两人！如果我的诗歌有任何力量，没有任何一天能将你们从记忆中抹去。"],
@@ -596,6 +625,8 @@ const O = [
   [9,435,"Purpureus veluti cum flos succisus aratro / languescit moriens.","As when a purple flower, cut by the plough, droops and dies.","如同一朵紫色的花被犁铧割断，萎靡凋零。"],
   [9,446,"Tum caput ipsi aufert domino truncumque relinquit / sanguine singultantem.","Then he strikes the head from its master and leaves the trunk gasping with blood.","然后他砍下主人的头颅，留下躯干在血中抽搐。"],
   [9,641,"Audentes Fortuna iuvat.","Fortune favours the bold.","命运眷顾勇者。"],
+
+  // ——— BOOK X: Council of Gods & Battle ———
   [10,11,"Abnueram bello Italiam concurrere Teucris.","I had forbidden Italy to clash in war with the Trojans.","我曾禁止意大利与特洛伊人开战。"],
   [10,100,"Rex Iuppiter omnibus idem. / Fata viam invenient.","King Jupiter is the same to all. The fates will find a way.","朱庇特王对所有人一视同仁。命运会找到它的路。"],
   [10,113,"Suo cuique reddetur labori.","Each shall be repaid according to their toil.","每个人将根据自己的劳作得到回报。"],
@@ -605,6 +636,8 @@ const O = [
   [10,630,"Terga dabo et Turnum fugientem haec terra videbit?","Shall I turn my back and this land see Turnus fleeing?","我要转身逃跑，让这片土地看到图尔努斯在逃亡？"],
   [10,811,"Usque adeone mori miserum est?","Is dying really so wretched?","死亡真的如此可悲吗？"],
   [10,846,"Vitaque cum gemitu fugit indignata sub umbras.","And life with a groan fled indignant to the shades below.","生命带着一声叹息，愤然逃向幽冥。"],
+
+  // ——— BOOK XI: Grief, Truce & Camilla ———
   [11,97,"Nos alias hinc ad lacrimas eadem horrida belli / fata vocant.","The same grim fates of war call us from here to other tears.","同样残酷的战争命运将我们从这里召唤向另一些泪水。"],
   [11,104,"Fato stat cuncta.","All things stand by fate.","一切都由命运决定。"],
   [11,159,"Nulla salus bello, pacem te poscimus omnes.","There is no safety in war; we all beg you for peace.","战争中没有安全；我们所有人都向你乞求和平。"],
@@ -614,6 +647,8 @@ const O = [
   [11,508,"Bellum, O terra hospita, portas!","War, O hospitable land, you bring!","战争——你带来了战争，好客的土地啊！"],
   [11,725,"Nulla fugae ratio, nulla spes: undique Turnus / aderat.","No means of flight, no hope: on every side Turnus was there.","无路可逃，无望可寻：图尔努斯在四面八方。"],
   [11,831,"Vitam deo vivam sine crimine; tantum / me rapias per tela.","Let me live a life without blame for a god; only snatch me away through the weapons.","让我为神过一种无罪的生活；只要让我穿过刀锋被带走。"],
+
+  // ——— BOOK XII: The Final Duel, Fate Resolved ———
   [12,45,"Usque adeone mori miserum est?","Is dying really so wretched?","死亡真的如此可悲吗？"],
   [12,97,"Vincet amor patriae laudumque immensa cupido.","Love of country and boundless desire for glory shall prevail.","对祖国的爱和对荣耀的无尽渴望将会胜出。"],
   [12,153,"Di nostra incepta secundent.","May the gods favour our undertaking.","愿众神庇佑我们的事业。"],
@@ -630,6 +665,10 @@ const O = [
   [12,952,"Tune hinc spoliis indute meorum / eripiare mihi?","Shall you, clad in the spoils of my people, be snatched from me?","穿着我亲人甲胄的你，竟想从我手中逃脱？"],
   [12,951,"Pallas te hoc vulnere, Pallas / immolat et poenam scelerato ex sanguine sumit.","Pallas, Pallas strikes you with this wound, and exacts the penalty from your cursed blood.","帕拉斯，是帕拉斯用这一击伤你，从你有罪的血中索取惩罚。"],
   [12,952,"Vitaque cum gemitu fugit indignata sub umbras.","And life with a groan fled indignant to the shades below.","生命带着一声叹息，愤然逃向幽冥的阴影。"],
+
+  // ——— ADDITIONAL ORACLES ———
+
+  // Book I
   [1,257,"O qui res hominumque deumque / aeternis regis imperiis et fulmine terres.","O you who rule the affairs of men and gods with eternal authority, and terrify with your thunderbolt.","你以永恒的权威统治人与神的事务，以雷霆使万物战栗。"],
   [1,364,"Imperium Oceano, famam qui terminet astris.","Whose empire the Ocean bounds, whose fame the stars.","他的帝国以大洋为界，荣耀直达星辰。"],
   [1,378,"Sunt hic etiam sua praemia laudi.","Here too there are rewards for merit.","即使在这里，功绩也有它的回报。"],
@@ -638,6 +677,8 @@ const O = [
   [1,291,"Nascetur pulchra Troianus origine Caesar.","From noble Trojan origin a Caesar shall be born.","从高贵的特洛伊血脉中，一位凯撒将诞生。"],
   [1,610,"O sola infandos Troiae miserata labores.","O you alone who pitied Troy's unspeakable suffering.","唯有你怜悯了特洛伊不可言说的苦难。"],
   [1,199,"O passi graviora; dabit deus his quoque finem.","O you who have endured worse; god will give an end to these as well.","承受过更重苦难的人啊；神也会给这一切一个终结。"],
+
+  // Book II
   [2,12,"Sed si tantus amor casus cognoscere nostros.","But if so great a love to learn our misfortunes.","但如果你对了解我们的灾难有如此深切的渴望。"],
   [2,250,"Vertitur interea caelum et ruit Oceano nox.","Meanwhile the sky revolves and night rushes from the Ocean.","天穹转动，夜从大洋奔涌而来。"],
   [2,325,"Arma amens capio; nec sat rationis in armis.","Maddened, I seize arms — yet there is not enough reason in arms.","疯了一般，我抓起武器——然而武器中哪有足够的理智。"],
@@ -646,12 +687,16 @@ const O = [
   [2,660,"Non tali auxilio nec defensoribus istis / tempus eget.","The time does not call for such help nor such defenders.","现在需要的不是这样的帮助，也不是这样的守护者。"],
   [2,725,"Eripe, nate, fugam finemque impone labori.","Snatch your escape, my son, and put an end to this toil.","快逃吧，我的孩子，结束这场苦难。"],
   [2,750,"Nusquam abero et tutum patrio te limine sistam.","I shall never be far and will set you safe at your father's threshold.","我永远不会远离，会把你安全送到你父亲的门槛。"],
+
+  // Book III
   [3,48,"Horrendum et dictu video mirabile monstrum.","I see a dreadful and wondrous portent.","我看到了一个可怖而奇异的征兆。"],
   [3,309,"Accipite ergo animis atque haec mea figite dicta.","Receive these words in your hearts and fix them there.","把这些话刻入你们的心中。"],
   [3,373,"Italiam primus conclamat Achates.","Achates is the first to cry out: Italy!","阿卡特斯第一个高呼：意大利！"],
   [3,395,"Multa bovis circa mactantur corpora Morti.","Many bodies of cattle are slain in offering to Death.","许多牛的躯体被宰杀，献祭给死亡。"],
   [3,477,"Vade age, et ingentem factis fer ad aethera Troiam.","Go now, and by your deeds carry great Troy to the heavens.","去吧，用你的行动将伟大的特洛伊带上苍穹。"],
   [3,395,"Nocte fugam taciti moliri et intendere vela.","In the night, to prepare flight in silence and spread the sails.","在黑夜中，悄悄地筹备逃亡，张开风帆。"],
+
+  // Book IV
   [4,88,"Quid vota furentem, / quid delubra iuvant?","What use are vows to one in frenzy? What use are temples?","祈愿对疯狂之人有何用？神殿又有何益？"],
   [4,305,"Dissimulare etiam sperasti, perfide, tantum / posse nefas?","Did you hope, faithless one, that you could disguise so great a wrong?","你以为你能掩盖这么大的罪过吗，背信的人？"],
   [4,408,"Improbe Amor, quid non mortalia pectora cogis!","Cruel Love, to what do you not drive mortal hearts!","残酷的爱神，你不驱使凡人的心走向何处！"],
@@ -661,12 +706,16 @@ const O = [
   [4,331,"Ego te, quae plurima fando / enumerare vales, numquam, regina, negabo / promeritam.","I shall never deny, O queen, that you deserve all you can list in words.","女王，我绝不否认，你值得你所能列举的一切。"],
   [4,440,"Si bene quid de te merui, fuit aut tibi quicquam / dulce meum.","If I have deserved well of you, or if anything of mine was ever sweet to you.","如果我曾对你有过任何功劳，或者我的任何东西曾让你感到甜蜜。"],
   [4,478,"Testatur moritura deos et conscia fati / sidera.","Dying, she calls to witness the gods and the stars that know her fate.","将死之人呼唤众神和知晓她命运的星辰作证。"],
+
+  // Book V
   [5,304,"Nec quisquam aeratas acies ex agmine tanto / audet adire virum.","No one from so great a host dares to face the man in bronze armour.","在如此庞大的军队中，无人敢面对那穿铜甲的人。"],
   [5,467,"Non iam certamine summo, / sed pro vita extrema.","No longer for the highest prize, but for very life.","不再为最高的荣誉，而是为了活下去。"],
   [5,604,"O nimium caelo et pelago confise sereno!","O you who trusted too much in clear sky and calm sea!","你太过信赖晴朗的天空与平静的海面了！"],
   [5,700,"Nate, mihi quondam vita dulcior, / Iliacis exercite fatis.","Son, once sweeter to me than life, tested by Trojan fates.","孩子啊，曾比生命更甜蜜，被特洛伊的命运反复磨练。"],
   [5,456,"Magna coronarum praemia tollere iussit.","He commanded them to take away the great prizes of the crowns.","他命令他们拿走那些伟大的桂冠奖赏。"],
   [5,853,"Nimium vobis Romana propago / visa potens.","Too powerful to you seemed Roman progeny.","罗马的后裔在你们看来太过强大了。"],
+
+  // Book VI
   [6,86,"Bella, horrida bella, / et Thybrim multo spumantem sanguine cerno.","Wars, horrible wars, and the Tiber foaming with much blood I see.","战争，可怖的战争，我看见台伯河泛着鲜血的泡沫。"],
   [6,14,"Non hoc ista sibi tempus spectacula poscit.","This moment does not call for such spectacles.","这一刻不需要这样的景象。"],
   [6,268,"Ibant obscuri sola sub nocte per umbram.","They walked in darkness beneath the lonely night, through shadow.","他们在孤独的夜色下穿行于黑暗之中，穿过阴影。"],
@@ -676,35 +725,164 @@ const O = [
   [6,791,"Hic vir, hic est, tibi quem promitti saepius audis.","This, this is the man whom you so often hear promised to you.","这个人，这就是你时常听到被许诺给你的那个人。"],
   [6,833,"Quis te, magne Cato, tacitum aut te, Cosse, relinquat?","Who could pass you by in silence, great Cato, or you, Cossus?","谁能默默略过你，伟大的加图，或者你，科苏斯？"],
   [6,126,"Troius Aeneas, pietate insignis et armis.","Trojan Aeneas, distinguished in devotion and in arms.","特洛伊的埃涅阿斯，以虔诚和武力闻名。"],
+
+  // Book VII
   [7,37,"Maius opus moveo.","I embark on a greater work.","我启动一项更宏大的事业。"],
   [7,45,"Tu vatem, tu, diva, mone; dicam horrida bella.","You, goddess, instruct the prophet; I shall tell of horrible wars.","女神啊，你来指引预言者；我将讲述可怖的战争。"],
   [7,170,"Laurus erat tecti medio in penetralibus altis.","A laurel stood in the midst of the house, in the high inner chamber.","一棵月桂树矗立在宫殿深处的高堂之中。"],
   [7,255,"Tum satus Anchisa delectos ordine ab omni / centum oratores augusta ad moenia regis / ire iubet.","Then the son of Anchises commands a hundred chosen envoys to go to the august walls of the king.","安基塞斯之子命令一百名精选的使者前往国王庄严的城墙。"],
   [7,580,"Quis deus in fraudem, quae dura potentia nostra / egit?","What god, what harsh power drove us to treachery?","什么神、什么残酷的力量驱使我们走向欺诈？"],
+
+  // Book VIII
   [8,131,"Haud incerta cano.","Not uncertain things I sing.","我所歌唱的，不是不确定之事。"],
   [8,335,"Aureus hanc vitam in terris Saturnus agebat.","Golden Saturn led this life on earth.","金色的萨图尔努斯在大地上过着这样的生活。"],
   [8,362,"Iam tum religio pavidos terrebat agrestis.","Already then religion terrified the fearful rustics.","那时候宗教就已经令胆怯的乡民恐惧了。"],
   [8,441,"Tu, nubibus actis, / dividis et socios.","You, driving the clouds, divide even companions.","你驱散乌云，却也将同伴分离。"],
   [8,520,"Iamque adeo scopulos Sirenum advecta subibat.","And now she was passing beneath the cliffs of the Sirens.","此刻她正从塞壬的岩石下驶过。"],
+
+  // Book IX
   [9,311,"Est hic, est animus lucis contemptor et istum / qui vita bene credat emi, quo tendis, honorem.","Here, here is a spirit that scorns the light, and believes that honour you seek is cheaply bought with life.","这里有一颗蔑视光明的心灵，相信你所追求的荣誉用生命来换是划算的。"],
   [9,601,"En, age, si qua animo virtus, et consere dextram.","Come, if there is any courage in your heart, and match me hand to hand.","来吧，如果你心中还有勇气，就与我交手。"],
   [9,140,"Nusquam amittet oculos; sub nocte tegetur.","She will never lose sight of them; she will be hidden by the night.","她永远不会移开目光；她将被夜色掩护。"],
   [9,485,"At non Euryalum referent tua dicta parentem.","But your words shall not bring back Euryalus to his mother.","但你的话不能把欧律阿卢斯带回他母亲身边。"],
+
+  // Book X
   [10,440,"Tum genitor natum dictis adfatur amicis.","Then the father addresses his son with friendly words.","然后父亲用温和的话语对儿子说。"],
   [10,773,"I, decus, i, nostrum; melioribus utere fatis.","Go, my glory, go; enjoy better fates.","去吧，我的荣耀，去吧；去享受更好的命运。"],
   [10,791,"Nescia mens hominum fati sortisque futurae.","The mind of man knows not fate or future lot.","人的心灵不懂命运与未来的安排。"],
   [10,524,"Nescit longius ire dolor.","Grief knows no further going.","悲痛已经无法更深了。"],
   [10,374,"Hunc ego te, Evandre, aspicio? Haecine dona reporto?","Is this you I behold, Evander? Are these the gifts I bring back?","这就是我带回来的你吗，伊万德尔？这就是我带回的礼物吗？"],
+
+  // Book XI
   [11,139,"Parcite me fatis debitam eripere.","Spare me — do not snatch one owed to fate.","饶了我——不要把命运注定的人夺走。"],
   [11,371,"Multa dies variusque labor mutabilis aevi / rettulit in melius.","Many a day and the varied toil of changing time has turned things for the better.","漫长的岁月和变幻的时代以千般劳作，把事情变得更好。"],
   [11,425,"Cedit item retro, simul hunc fuga nuda patescit.","He also yields ground, the moment bare flight opens up.","当赤裸的逃路敞开的那一刻，他也向后退去。"],
   [11,441,"Usque adeo turbatur agris.","So greatly are the fields thrown into turmoil.","田野被搅动到如此地步。"],
   [11,688,"Ornatus Argivae Helenae quos illa Mycenis / advexit.","The ornaments of Argive Helen, which she brought from Mycenae.","来自迈锡尼的阿尔戈斯海伦的饰物。"],
+
+  // Book XII
   [12,229,"Fas et iura sinunt; nostra haud diffidite laudi.","Right and law permit it; do not mistrust our valour.","正义与法律允许此事；不要怀疑我们的勇气。"],
   [12,503,"Iamque adeo super unus eram.","And now I alone survived.","此刻只剩下我一个人了。"],
   [12,572,"Nec plura effatus saxum circumspicit ingens.","Saying no more, he looks around for a huge boulder.","他不再多说，四处张望寻找一块巨石。"],
   [12,764,"Di Iovis in tectis iram miserantur inanem / amborum et tantos mortalibus esse labores.","The gods in Jupiter's halls pity the vain rage of both and that mortals have such great toils.","朱庇特殿堂中的众神怜悯两人徒劳的愤怒，叹息凡人竟有如此沉重的磨难。"],
   [12,435,"Non mortale sonans; maiora iam volvere casus.","Not sounding mortal; already greater events were turning.","声音不似凡人；更宏大的变局已在翻转。"],
+
+  // ——— EXPANSION: 冥府重点扩充 + 全篇补充 ———
+
+  // ··· Book I ···
+  [1,118,"Eripiunt subito nubes caelumque diemque / Teucrorum ex oculis.","Suddenly clouds snatch away both sky and daylight from the Trojans' eyes.","乌云骤然从特洛伊人眼前夺走了天空与白昼。"],
+  [1,155,"Sic ait, et dicto citius tumida aequora placat.","So he spoke, and swifter than his word he calms the swelling seas.","他话音未落，翻涌的海面已被平息。"],
+  [1,421,"Miratur molem Aeneas, magalia quondam.","Aeneas marvels at the mass of buildings, once mere huts.","埃涅阿斯惊叹于这宏伟建筑——曾经只是简陋的棚屋。"],
+  [1,437,"O fortunati, quorum iam moenia surgunt!","O fortunate ones, whose walls already rise!","幸运的人啊，你们的城墙已经矗立！"],
+  [1,460,"Quae regio in terris nostri non plena laboris?","What region of the earth is not full of our toil?","大地上哪个角落没有我们苦难的痕迹？"],
+  [1,461,"Animum pictura pascit inani, / multa gemens.","He feeds his soul on the empty picture, groaning deeply.","他注视着空洞的画像，深深叹息，以此喂养灵魂。"],
+  [1,328,"O dea, si prima repetens ab origine pergam.","O goddess, if I should trace the story from its very beginning.","女神啊，如果要从最初的起源开始讲起。"],
+  [1,664,"Longa tibi exsilia et vastum maris aequor arandum.","Long exile awaits you, and a vast expanse of sea to plough.","漫长的流放在等着你，还有浩瀚的海面要犁过。"],
+
+  // ··· Book II ···
+  [2,199,"Scinditur incertum studia in contraria vulgus.","The uncertain crowd is split into opposing factions.","犹豫不决的人群分裂成对立的阵营。"],
+  [2,68,"Laocoön ardens summa decurrit ab arce.","Laocoön, burning with passion, runs down from the citadel's height.","拉奥孔满腔激愤，从城堡的最高处奔跑而下。"],
+  [2,310,"Tempus erat; placidumque petebant corpora somnum.","It was the hour; weary bodies sought peaceful sleep.","那是肉体寻求宁静睡眠的时辰。"],
+  [2,348,"Arma, viri, ferte arma; vocat lux ultima victos.","Arms, men, bring arms! The final dawn calls the conquered.","武器，拿武器来！最后的曙光在召唤战败者。"],
+  [2,728,"Iamque vale et nati serva communis amorem.","Now farewell, and preserve the love of our shared child.","如今别了，请守护我们共同的孩子的爱。"],
+  [2,738,"Nequiquam ingeminans iterumque iterumque vocavi.","In vain, again and again I called.","一遍又一遍地呼唤——终归是徒劳。"],
+  [2,426,"Cadit et Ripheus, iustissimus unus / qui fuit in Teucris et servantissimus aequi.","Falls too Ripheus, the most just man among the Trojans and the most observant of right.","里菲乌斯也倒下了——特洛伊人中最正义、最恪守公道的人。"],
+
+  // ··· Book III ···
+  [3,129,"Effigiem Xanthi Troiamque videtis / quam vestrae fecere manus.","You see an image of Xanthus and a Troy your own hands have built.","你们看到了桑图斯河的影像和你们亲手建造的特洛伊。"],
+  [3,282,"Di, prohibete minas; di, talem avertite casum!","Gods, ward off these threats; gods, turn aside such doom!","众神啊，消弭这些威胁！众神啊，转开这样的厄运！"],
+  [3,192,"Dare fatis vela iubebat.","He bade us give our sails to the fates.","他命令我们把风帆交给命运。"],
+  [3,495,"Nos alia ex aliis in fata vocamur.","We are called from one fate to another.","我们被从一个命运召唤向另一个命运。"],
+  [3,718,"Heu genitorem, omnis curae casusque levamen, / amitto Anchisen.","Alas, I lose my father Anchises — solace of every care and trouble.","我失去了父亲安基塞斯——一切忧虑与苦难的慰藉。"],
+
+  // ··· Book IV ···
+  [4,1,"At regina gravi iamdudum saucia cura / vulnus alit venis et caeco carpitur igni.","But the queen, long since smitten with a heavy ache, feeds the wound with her lifeblood and is consumed by a hidden fire.","但女王早已被沉重的忧思所伤，以心血供养伤口，被暗火吞噬。"],
+  [4,9,"Anna soror, quae me suspensam insomnia terrent!","Anna, sister, what dreams terrify me in my suspense!","安娜姐姐，什么样的梦在惶恐中折磨着我！"],
+  [4,169,"Ille dies primus leti primusque malorum / causa fuit.","That day was the first cause of death and the first of evils.","那一天是死亡最初的缘由，也是一切灾祸的开端。"],
+  [4,173,"Speluncam Dido dux et Troianus eandem / deveniunt.","Dido and the Trojan leader come to the same cave.","狄多与特洛伊的首领走进了同一个洞穴。"],
+  [4,365,"Nec te noster amor nec te data dextera quondam / nec moritura tenet crudelis funere Dido?","Does neither our love hold you, nor the hand once given, nor Dido about to die a cruel death?","我们的爱留不住你？曾经的誓言留不住你？即将惨死的狄多也留不住你？"],
+  [4,381,"I, sequere Italiam ventis, pete regna per undas.","Go, pursue Italy on the winds, seek your kingdom through the waves.","去吧，乘风追逐意大利，穿越波浪寻找你的王国。"],
+  [4,270,"Heia age, rumpe moras.","Come, break through all delay.","来吧，打破一切迟疑。"],
+
+  // ··· Book V ···
+  [5,49,"Annuus exactis completur mensibus orbis.","The yearly circle of months is complete.","一年的月份轮转已满。"],
+  [5,620,"Quis furor iste novus? Quo nunc, quo tenditis?","What new madness is this? Where now, where do you aim?","这是什么新的疯狂？你们现在要去哪里？"],
+  [5,616,"Heu nihil invitis fas quemquam fidere divis!","Alas, no one may trust in anything when the gods are unwilling!","唉，当众神不情愿时，没有人敢信赖任何事！"],
+
+  // ··· Book VI: 冥府 — MAJOR EXPANSION ···
+  [6,45,"Phoebe, gravis Troiae semper miserate labores.","Phoebus, you who always pitied Troy's grievous sufferings.","福玻斯啊，你总是怜悯特洛伊沉重的苦难。"],
+  [6,51,"Da propriam, Thymbraee, domum; da moenia fessis.","Grant us our own home, Thymbraean god; grant walls to the weary.","提姆布拉之神啊，赐予我们自己的家园；赐予疲惫之人城墙。"],
+  [6,77,"Poscere fata / tempus, ait; deus, ecce, deus!","It is time to ask the fates, she cried — the god, behold, the god!","她喊道：是时候求问命运了——神来了，看啊，神来了！"],
+  [6,133,"Si potuit manis accersere coniugis Orpheus.","If Orpheus could summon the shade of his wife.","如果俄耳甫斯能召唤他妻子的幽灵。"],
+  [6,148,"Si te nulla movet tantae pietatis imago.","If no image of such great devotion moves you.","如果如此深切的虔诚都无法打动你。"],
+  [6,156,"Primo avulso non deficit alter / aureus, et simili frondescit virga metallo.","When the first is torn away, a second golden bough grows, and the twig sprouts with the same metal.","第一根被折下，第二根金枝便生长出来，嫩枝以同样的金属发芽。"],
+  [6,179,"Itur in antiquam silvam, stabula alta ferarum.","They enter the ancient forest, deep lairs of wild beasts.","他们走进古老的森林，野兽深邃的巢穴。"],
+  [6,212,"Tum iussa Sibyllae, / haud mora, festinant flentes.","Then at the Sibyl's command, without delay, they hasten, weeping.","按照西比尔的命令，他们毫不迟疑地行动，一边流泪一边匆匆赶路。"],
+  [6,237,"Di, quibus imperium est animarum, umbraeque silentes.","Gods who hold dominion over spirits, and you, silent shades.","统治灵魂的诸神啊，还有你们，沉默的幽灵。"],
+  [6,264,"Vestibulum ante ipsum primisque in faucibus Orci / Luctus et ultrices posuere cubilia Curae.","Before the vestibule, in the very jaws of Orcus, Grief and avenging Cares have made their beds.","在地狱入口之前，在奥尔库斯的咽喉处，悲痛和复仇的忧虑安设了巢穴。"],
+  [6,273,"Pallentesque habitant Morbi tristisque Senectus, / et Metus et malesuada Fames ac turpis Egestas.","Pale Diseases dwell there, and sad Old Age, and Fear, and ill-counselling Hunger, and vile Want.","苍白的疾病住在那里，还有悲伤的衰老、恐惧、唆人作恶的饥饿和卑鄙的贫穷。"],
+  [6,282,"In medio ramos annosaque bracchia pandit / ulmus opaca, ingens.","In the midst a dark, vast elm spreads its ancient boughs.","一棵幽暗巨大的榆树在中央展开它年迈的枝桠。"],
+  [6,298,"Portitor has horrendus aquas et flumina servat / terribili squalore Charon.","A dread ferryman guards these waters — Charon, of terrible filth.","一位可怖的摆渡人守护着这些水域——卡戎，满身骇人的污垢。"],
+  [6,305,"Huc omnis turba ad ripas effusa ruebat.","All the crowd rushed, pouring toward the banks.","所有的灵魂如潮水般涌向河岸。"],
+  [6,322,"Nec ripas datur horrendas nec rauca fluenta / transportare prius quam sedibus ossa quierunt.","They may not cross the dread banks or hoarse waters until their bones have found rest.","在骸骨找到安息之所之前，他们不被允许渡过那骇人的河岸。"],
+  [6,371,"Quod te per caeli iucundum lumen et auras, / per genitorem oro, per spes surgentis Iuli.","By heaven's sweet light and air, by your father, by your hopes for rising Iulus — I beg you.","以天堂甜美的光芒和空气起誓，以你的父亲，以你对尤卢斯成长的希望——我恳求你。"],
+  [6,384,"Cerberus haec ingens latratu regna trifauci / personat.","Huge Cerberus makes these realms ring with his triple-throated barking.","巨大的刻耳柏洛斯以三张嘴的吠叫震响了这片领域。"],
+  [6,417,"Continuo auditae voces vagitus et ingens / infantumque animae flentes in limine primo.","At once voices were heard, a great wailing — the souls of infants weeping at the first threshold.","立刻传来哭声和巨大的啼嚎——婴儿的灵魂在最初的门槛上哭泣。"],
+  [6,426,"Proxima deinde tenent maesti loca, qui sibi letum / insontes peperere manu.","Next, those who, guiltless, dealt themselves death with their own hand hold the mournful places.","接下来，那些无罪却亲手结束自己生命的人占据着哀伤之地。"],
+  [6,450,"Inter quas Phoenissa recens a vulnere Dido / errabat silva in magna.","Among them Phoenician Dido, fresh from her wound, wandered in the great forest.","在她们之中，腓尼基的狄多带着新鲜的伤口，在巨大的森林里徘徊。"],
+  [6,456,"Funeris heu tibi causa fui?","Was I, alas, the cause of your death?","唉，我竟是你死亡的原因吗？"],
+  [6,469,"Quem fugis? Extremum fato quod te adloquor hoc est.","Whom do you flee? This is the last word fate allows me to speak to you.","你在逃避谁？这是命运允许我对你说的最后的话。"],
+  [6,475,"Tandem corripuit sese atque inimica refugit / in nemus umbriferum.","At last she tore herself away and fled, hostile, into the shadowy grove.","她终于挣脱身去，怀着敌意逃入幽暗的树林。"],
+  [6,535,"Hic locus est, partis ubi se via findit in ambas.","Here is the place where the road divides into two paths.","这就是道路分成两条的地方。"],
+  [6,555,"Tisiphone sedens, palla succincta cruenta, / vestibulum exsomnis servat noctesque diesque.","Tisiphone, girt in a bloody robe, guards the vestibule sleepless, night and day.","提西福涅束着血衣，不眠不休地日夜守卫着入口。"],
+  [6,617,"Vendidit hic auro patriam dominumque potentem / imposuit.","This one sold his country for gold and set a tyrant over it.","这个人把祖国卖了金子，把暴君强加于它之上。"],
+  [6,637,"Devenere locos laetos et amoena virecta / fortunatorum nemorum sedesque beatas.","They came to joyful places and pleasant green meadows — the blessed groves and happy abodes.","他们来到欢乐之地、宜人的绿色草地——幸福的林间与安乐的居所。"],
+  [6,640,"Largior hic campos aether et lumine vestit / purpureo.","Here a more generous sky clothes the fields in purple light.","这里更慷慨的苍穹以紫色的光芒为田野披上衣裳。"],
+  [6,660,"Quique pii vates et Phoebo digna locuti.","Devoted poets who spoke things worthy of Phoebus.","虔诚的诗人们，他们说出了配得上福玻斯的话语。"],
+  [6,662,"Inventas aut qui vitam excoluere per artis.","Or those who improved life through discovered arts.","或是那些通过发明的技艺改善了生活的人。"],
+  [6,664,"Quique sui memores aliquos fecere merendo.","Those who by their merit made others remember them.","以及凭自己的功绩让他人铭记的人们。"],
+  [6,687,"Venisti tandem, tuaque exspectata parenti / vicit iter durum pietas?","You have come at last! Has your devotion, awaited by your father, conquered the hard journey?","你终于来了！你的虔诚——父亲一直期盼的——战胜了这段艰难的旅途？"],
+  [6,695,"Ter conatus ibi collo dare bracchia circum; / ter frustra comprensa manus effugit imago.","Three times he tried to throw his arms around his neck; three times the shade escaped his vain embrace.","三次他试图伸臂环抱父亲的脖颈；三次幽影从他徒劳的拥抱中逃脱。"],
+  [6,703,"Animae quibus altera fato / corpora debentur, Lethaei ad fluminis undam / securos latices et longa oblivia potant.","Souls to whom second bodies are owed by fate drink carefree waters and long forgetfulness at the river of Lethe.","命中注定要重获肉身的灵魂们，在忘川之河畔饮下无忧的水和漫长的遗忘。"],
+  [6,719,"Hinc metuunt cupiuntque, dolent gaudentque.","Hence they fear and desire, grieve and rejoice.","因此他们恐惧又渴望，悲痛又欢喜。"],
+  [6,733,"Ergo exercentur poenis veterumque malorum / supplicia expendunt.","So they are disciplined by punishments and pay the penalties of old sins.","于是他们在惩罚中受磨练，偿还旧日罪孽的代价。"],
+  [6,743,"Aliae panduntur inanes / suspensae ad ventos.","Some are hung, spread empty to the winds.","一些灵魂被悬挂在风中，空荡地展开。"],
+  [6,853,"Hae tibi erunt artes; pacique imponere morem.","These shall be your arts: to impose the ways of peace.","这些将是你的技艺：为和平定下规矩。"],
+  [6,871,"Heu, miserande puer, si qua fata aspera rumpas!","Alas, pitiable boy, if only you could break your harsh fates!","可叹可怜的少年啊，但愿你能冲破严酷的命运！"],
+
+  // ··· Book VII ···
+  [7,100,"Est locus, Hesperiam Grai cognomine dicunt.","There is a land the Greeks call Hesperia.","有一片土地——希腊人称之为赫斯珀里亚。"],
+  [7,461,"Heu stirpem invisam et fatis contraria nostris / fata Phrygum!","Alas, the hated race, and Phrygian fates opposed to ours!","可恨的种族啊，弗里吉亚人的命运与我们势不两立！"],
+  [7,641,"Pandite nunc Helicona, deae, cantusque movete.","Open now Helicon, O goddesses, and stir your songs.","女神们，现在打开赫利孔山吧，唤起你们的歌声。"],
+  [7,808,"Bellatrix, non illa colo calathisve Minervae / femineas adsueta manus.","A warrior woman — her womanly hands unaccustomed to Minerva's distaff or wool baskets.","一位女战士——她女性的双手不习惯弥涅尔瓦的纺锤和毛线篮。"],
+  [7,309,"Saevit amor ferri et scelerata insania belli.","The love of the sword rages, and the wicked madness of war.","对刀剑的渴望在燃烧，战争的疯狂邪念在肆虐。"],
+
+  // ··· Book VIII ···
+  [8,68,"Nate dea, quae nunc animo sententia surgit?","Son of a goddess, what intention now rises in your mind?","女神之子啊，此刻你心中涌起什么想法？"],
+  [8,596,"O mihi praeteritos referat si Iuppiter annos!","O if Jupiter would bring back my bygone years!","但愿朱庇特把我逝去的年华还给我！"],
+  [8,42,"O sate gente deum, Troianam ex hostibus urbem / qui revehis nobis.","O you born of the race of gods, who bring back the Trojan city to us from the enemy.","诸神血脉的后裔啊，你从敌人手中为我们带回特洛伊之城。"],
+  [8,374,"Iamque dies alterque dies processit, et omnis / consumpta est aetas.","And now one day after another passed, and all the time was spent.","日子一天一天地过去，所有的时光都耗尽了。"],
+
+  // ··· Book IX ···
+  [9,5,"Turne, quod optanti divum promittere nemo / auderet, volvenda dies en attulit ultro.","Turnus, what no god would dare promise to one who prayed — the turning day has brought of its own accord.","图尔努斯，即使有人祈求也没有神灵敢许诺的——命运之轮自己带来了。"],
+  [9,252,"Si fortuna permittit, abile matri / miserate refer.","If fortune permits, return this message in pity to my mother.","如果命运允许，请怜悯地把消息带给我的母亲。"],
+  [9,617,"Caedicus Alcathoum obtruncat, Sacrator Hydaspem.","Caedicus strikes down Alcathous, Sacrator fells Hydaspes.","卡埃迪库斯斩倒阿尔卡托乌斯，萨克拉托尔砍倒许达斯佩斯。"],
+
+  // ··· Book X ···
+  [10,507,"O dolor atque decus magnum rediture parenti!","O grief and great glory, about to return to your father!","悲痛啊，即将带给父亲的巨大荣耀与哀伤！"],
+  [10,821,"Olli dura quies oculos et ferreus urget / somnus; in aeternam clauduntur lumina noctem.","Hard rest weighs on his eyes, and iron sleep; his eyes close in everlasting night.","沉重的安息压上他的双眼，铁铸的睡眠降临；双目在无尽的黑夜中永远闭合。"],
+  [10,449,"Sic Pater ille deum faciat, sic altus Apollo.","So may the father of the gods decree, so may lofty Apollo.","但愿众神之父这样决定，但愿高贵的阿波罗如此。"],
+
+  // ··· Book XI ···
+  [11,29,"Salve aeternum mihi, maxime Palla, / aeternumque vale.","Hail forever, greatest Pallas, and farewell forever.","永远安好，最伟大的帕拉斯，永远再见。"],
+  [11,843,"Vitam pro laude pacisci.","To barter life for glory.","以生命换取荣耀。"],
+  [11,252,"O fama ingens, ingentior armis, / vir Troiane.","O man of mighty fame, mightier still in arms, Trojan hero.","名声浩大、武力更加伟岸的特洛伊英雄啊。"],
+
+  // ··· Book XII ···
+  [12,56,"Tu spes, tu sola senectae / portus.","You are the hope, you alone the harbour of old age.","你是希望，你是暮年唯一的港湾。"],
+  [12,872,"Fata obstant, placidasque viri deus obstruit auris.","The fates stand in the way, and a god blocks the hero's willing ears.","命运横亘在前，神灵堵住了英雄的双耳。"],
+  [12,908,"Aeneas instat contra telumque coruscat / ingens arboreum.","Aeneas presses on, brandishing a huge spear like a tree.","埃涅阿斯步步紧逼，挥舞着一支如树般巨大的长矛。"],
+  [12,19,"Nulla mora in Turno.","No delay in Turnus.","图尔努斯毫不迟疑。"],
 ];
 
 const oracle = {
