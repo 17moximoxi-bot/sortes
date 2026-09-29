@@ -541,7 +541,6 @@ const O = [
   [4,296,"Varium et mutabile semper / femina.","A fickle and changeable thing is woman always.","女人永远是善变而无常之物。"],
   [4,361,"Desine meque tuis incendere teque querelis.","Cease to inflame both me and yourself with your complaints.","别再用你的哀怨焚烧你我。"],
   [4,373,"Nec tibi diva parens generis nec Dardanus auctor, / perfide.","Neither was a goddess your mother, nor Dardanus your ancestor, faithless one.","你的母亲不是女神，达达努斯也不是你的祖先，背信之人。"],
-  [4,412,"Nulla Venus, non ulli animum flexere hymenaei.","No love, no marriage vows bent his resolve.","没有爱情、没有婚约能动摇他的决心。"],
   [4,449,"Mens immota manet, lacrimae volvuntur inanes.","His mind remains unmoved; the tears fall in vain.","他的心志纹丝不动；泪水徒然滚落。"],
   [4,569,"Italiam non sponte sequor.","I do not pursue Italy of my own will.","我追寻意大利，并非出于自愿。"],
   [4,625,"Exoriare aliquis nostris ex ossibus ultor.","Rise, some avenger, from my bones!","从我的骨灰中升起吧，某位复仇者！"],
@@ -724,7 +723,6 @@ const O = [
 
   // Book VIII
   [8,131,"Haud incerta cano.","Not uncertain things I sing.","我所歌唱的，不是不确定之事。"],
-  [8,335,"Aureus hanc vitam in terris Saturnus agebat.","Golden Saturn led this life on earth.","金色的萨图尔努斯在大地上过着这样的生活。"],
   [8,362,"Iam tum religio pavidos terrebat agrestis.","Already then religion terrified the fearful rustics.","那时候宗教就已经令胆怯的乡民恐惧了。"],
   [8,441,"Tu, nubibus actis, / dividis et socios.","You, driving the clouds, divide even companions.","你驱散乌云，却也将同伴分离。"],
   [8,520,"Iamque adeo scopulos Sirenum advecta subibat.","And now she was passing beneath the cliffs of the Sirens.","此刻她正从塞壬的岩石下驶过。"],
@@ -1073,7 +1071,6 @@ const O = [
   [9,446,"Purpureus veluti cum flos succisus aratro.","As a purple flower cut by the plough.","如同被犁铧割断的紫色花朵。"],
   [9,525,"Iamque aderant portis.","And now they were at the gates.","此刻他们已到达城门。"],
   [9,617,"Caedicus Alcathoum obtruncat.","Caedicus strikes down Alcathous.","卡埃迪库斯斩倒阿尔卡托乌斯。"],
-  [9,729,"Omnia vincit amor.","Love conquers all things.","爱征服一切。"],
 
   // ··· Book X: 众神与战斗 ···
   [10,18,"Sua cuique exorsa laborem / fortunamque ferent.","Each shall bear the toil and fortune of their own beginning.","每个人都将承受自己起步时的辛劳和命运。"],
@@ -1286,7 +1283,7 @@ const $ = id => document.getElementById(id);
 
 function showOracle(entry) {
   $('oracleNum').value = String(entry.idx).padStart(3, '0');
-  $('oracleRef').textContent = `Aeneis ${toRoman(entry.book)}.${entry.line}`;
+  $('oracleRef').textContent = `Aeneis ${toRoman(entry.book)}`;
   $('oracleBook').textContent = BOOKS[entry.book];
   $('oracleLatin').textContent = entry.la;
   $('oracleEn').textContent = entry.en;
@@ -1331,7 +1328,7 @@ function draw() {
 function copyOracle() {
   if (!oracle.drawn) return;
   const e = oracle.drawn;
-  const text = `Sortes Vergilianae — Aeneis ${toRoman(e.book)}.${e.line}\n\n${e.la}\n\n${e.en}\n\n${e.zh}`;
+  const text = `Sortes Vergilianae — Aeneis ${toRoman(e.book)}\n\n${e.la}\n\n${e.en}\n\n${e.zh}`;
   try {
     navigator.clipboard.writeText(text).then(() => showToast('Copied to clipboard')).catch(() => selectFallback(text));
   } catch { selectFallback(text); }
