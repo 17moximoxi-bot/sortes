@@ -308,6 +308,20 @@
     margin-bottom: 24px;
     opacity: 0.35;
     line-height: 1;
+    background: none;
+    border: none;
+    border-bottom: 1.5px dashed transparent;
+    width: 100%;
+    padding: 0;
+    outline: none;
+    cursor: text;
+    transition: border-color 0.3s ease, opacity 0.3s ease;
+  }
+
+  .oracle-number:hover,
+  .oracle-number:focus {
+    opacity: 0.6;
+    border-bottom-color: var(--gold-dim);
   }
 
   /* Footer actions */
@@ -429,7 +443,7 @@
 
   <div class="oracle" id="oracleDisplay">
     <div class="oracle-card" id="oracleCard">
-      <div class="oracle-number" id="oracleNum"></div>
+      <input class="oracle-number" id="oracleNum" type="text" inputmode="numeric" maxlength="4" aria-label="Oracle number">
       <div class="oracle-ref" id="oracleRef"></div>
       <div class="oracle-book" id="oracleBook"></div>
       <div class="ornament" style="margin: 20px auto;"><div class="diamond"></div></div>
@@ -1271,7 +1285,7 @@ const oracle = {
 const $ = id => document.getElementById(id);
 
 function showOracle(entry) {
-  $('oracleNum').textContent = String(entry.idx).padStart(3, '0');
+  $('oracleNum').value = String(entry.idx).padStart(3, '0');
   $('oracleRef').textContent = `Aeneis ${toRoman(entry.book)}.${entry.line}`;
   $('oracleBook').textContent = BOOKS[entry.book];
   $('oracleLatin').textContent = entry.la;
@@ -1297,7 +1311,7 @@ function draw() {
   const total = 12;
   const interval = setInterval(() => {
     const rand = oracle.data[Math.floor(Math.random() * oracle.data.length)];
-    $('oracleNum').textContent = String(rand.idx).padStart(3, '0');
+    $('oracleNum').value = String(rand.idx).padStart(3, '0');
     count++;
     if (count >= total) {
       clearInterval(interval);
@@ -1347,6 +1361,27 @@ function toRoman(n) {
   for (let i = 0; i < vals.length; i++) while (n >= vals[i]) { r += syms[i]; n -= vals[i]; }
   return r;
 }
+
+function lookupByNumber(n) {
+  if (!n || isNaN(n) || n < 1) return;
+  const len = oracle.data.length;
+  const idx = ((n - 1) % len) + 1;
+  const entry = oracle.data[idx - 1];
+  oracle.drawn = entry;
+  oracle.history.push(entry.idx);
+  showOracle(entry);
+}
+
+const numInput = $('oracleNum');
+numInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') { e.preventDefault(); numInput.blur(); }
+});
+numInput.addEventListener('blur', () => {
+  const n = parseInt(numInput.value, 10);
+  if (n && !isNaN(n) && n >= 1 && oracle.drawn && n !== oracle.drawn.idx) {
+    lookupByNumber(n);
+  }
+});
 
 $('drawBtn').addEventListener('click', draw);
 $('copyBtn').addEventListener('click', copyOracle);
